@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
     <title>formulaire en php</title>
 </head>
 <body>
-    <form action="#">
-        
+    <h1>Formulaire de contact</h1>
+    <form action="http://localhost:3000/contact.php" method="GET">
+            
+        <input type="text" name = "name" placeholder="Entrer votre Nom">
+        <input type="text" name = "prenom" placeholder="Entrer votre Prénom">
+        <input type="email" name = "mail" placeholder="Entrer votre Email">
+        <input type="tel" name = "telephone" placeholder="Entrer votre Téléphone">
+        <input type="text" name = "adresse" placeholder="Entrer votre Adresse">
+        <input class="submit" type="submit" value = "Envoyer">
+        <input class = "reset" type="reset" value="Annuler">
     </form>
 </body>
 </html>
