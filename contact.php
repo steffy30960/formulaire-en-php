@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Formulaire de contact</h1>
-    <form action="http://localhost:3000/contact.php" method="GET">
+    <form action="http://localhost:3000/contact.php" method="POST">
             
         <input type="text" name = "name" placeholder="Entrer votre Nom">
         <input type="text" name = "prenom" placeholder="Entrer votre Prénom">
@@ -25,17 +25,24 @@
   
   <!-- // je recupere mes données// -->
 <?php
-$name = $_GET ['name'];
-$prenom = $_GET ['prenom'];
-$email = $_GET ['mail'];
-$telephone = $_GET ["telephone"];
-$adresse = $_GET ["adresse"];
+$name = $_POST ['name'];
+$prenom = $_POST ['prenom'];
+$email = $_POST ['mail'];
+$telephone = $_POST ["telephone"];
+$adresse = $_POST ["adresse"];
 
 // je crée un tableau dans lequel je rentre mes données//
 $tableau = [$name,$prenom,$email,$telephone,$adresse];
-//print_r($tableau); // j'affiche mon tableau//
+print_r($tableau); // j'affiche mon tableau//
 
 //lorsqu on retire l attribut name de imput aucune valeur n est ajouter dans mon tableau//
 // lorsque j ouvre mon fichier php j obtiens un tableau vide //
+?>
+<?php
+
+if(empty($name) + empty($prenom) + empty($email) || empty($telephone) || empty($adresse)){
+echo "champs manquants";
+}
+
 ?>
 
